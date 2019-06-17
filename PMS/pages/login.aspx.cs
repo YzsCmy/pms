@@ -15,7 +15,7 @@ namespace PMS.pages
         private EmployeeDAO employeeDao = new EmployeeDAO();
         protected void Page_Load(object sender, EventArgs e)
         {
-            TextBox1.Text = "";
+            msg.Text = "";
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -34,12 +34,12 @@ namespace PMS.pages
                     if (pwd.Equals(passwd))
                     {
                         dataReader.Close();
-                        TextBox1.Text = "登录成功！";
+                        msg.Text = "登录成功！";
                         Response.Redirect("index.aspx?name=" + name+"&status="+status);
                     }
                 }
             }
-            TextBox1.Text = "用户名或密码错误！";
+            msg.Text = "用户名或密码错误！";
         }
     }
 }

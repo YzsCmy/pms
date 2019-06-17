@@ -65,7 +65,7 @@
                         <asp:Button ID="Button1" runat="server" Text="登录" class="btn btn-primary btn-block btn-flat" OnClick="Button1_Click" />
                     </div>
                     <div class="col-xs-12">
-                        <asp:TextBox ID="TextBox1" runat="server" ForeColor="Red"></asp:TextBox>
+                        <asp:Label ID="msg" runat="server" Text="" ForeColor="Red"></asp:Label>
                      <div>
                 </div>
             </form>
