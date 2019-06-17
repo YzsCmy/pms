@@ -369,8 +369,8 @@
             });
 
             if (getQueryString("status") == 1) {
-                document.getElementById("dele").style.visibility = "hidden";
-                document.getElementById("edit").style.visibility = "hidden";
+                document.getElementById("dele").style.display = "none";
+                document.getElementById("edit").style.display = "none";
             }
         });
 
