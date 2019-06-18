@@ -59,8 +59,9 @@
     </asp:ContentPlaceHolder>
 </head>
 <body class="hold-transition skin-purple sidebar-mini">
+     
     <form id="form1" runat="server">
-
+        <input type="hidden"   id="mystatus" value="<%=HttpContext.Current.Session["status"].ToString()%>" />
         <div>
             <div class="wrapper">
 
@@ -102,6 +103,7 @@
                         <a href="#"><i class="fa fa-circle text-success"></i> 在线</a>
                     </div>
                 </div>
+               
                 <ul class="sidebar-menu">
                     <li class="header">菜单</li>
 
@@ -109,8 +111,7 @@
 
                     <!-- 菜单 -->
 
-
-
+                    
                     <li class="treeview">
                         <a href="#">
                     <i class="fa fa-search"></i> <span>信息查询</span>
@@ -372,7 +373,7 @@
             $(".textarea").wysihtml5({
                 locale: 'zh-CN'
             });
-            var ststus = "<%=HttpContext.Current.Session["status"].ToString()%>"
+            var status = document.getElementById("mystatus").value
             if (status == "1") {
                 document.getElementById("add").style.display = "none";
                 document.getElementById("dele").style.display = "none";

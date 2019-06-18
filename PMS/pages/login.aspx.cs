@@ -35,8 +35,8 @@ namespace PMS.pages
                     {
                         dataReader.Close();
                         msg.Text = "登录成功！";
-                        Session.Add("name", name);
-                        Session.Add("status", status);
+                        HttpContext.Current.Session["name"] = name;
+                        HttpContext.Current.Session["status"]=status;
                         Response.Redirect("index.aspx?name=" + name+"&status="+status);
                     }
                 }
