@@ -24,6 +24,7 @@ namespace LMIS.query
             //1): 查询结果总数
             String countSql = "SELECT COUNT(*) FROM " + tableName + qo.getQuery();
             SqlDataReader countReader = OperateDBTemplate.Query(countSql, qo.KeyValues);
+
             countReader.Read();
             int totalCount = countReader.GetInt32(0);
             countReader.Close();

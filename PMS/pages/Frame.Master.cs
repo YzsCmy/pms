@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LMIS.dao;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -19,6 +20,17 @@ namespace PMS
                 }
             }
 
+        }
+
+        protected void Editpwd_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("editpwd.aspx");
+        }
+        
+        protected void Exit_Click(object sender, EventArgs e)
+        {
+            Session.Abandon();
+            Response.Redirect("login.aspx");
         }
     }
 }

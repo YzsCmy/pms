@@ -105,11 +105,11 @@
                                 <!-- Menu Footer-->
                                 <li class="user-footer">
                                     <div class="pull-left">
-                                        <asp:Button ID="editpwd" class="btn btn-default btn-flat" runat="server" Text="修改密码" />
+                                        <asp:Button ID="editpwd" class="btn btn-default btn-flat" runat="server" Text="修改密码"  OnClick="Editpwd_Click"/>
                                         
                                     </div>
                                     <div class="pull-right">
-                                        <a href="exit.aspx" class="btn btn-default btn-flat">注销</a>
+                                        <asp:Button ID="exit" runat="server" class="btn btn-default btn-flat" Text="注销"  OnClick="Exit_Click" />
                                     </div>
                                 </li>
                             </ul>

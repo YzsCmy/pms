@@ -116,6 +116,7 @@
     <Content Include="pages\addEmp.aspx" />
     <Content Include="pages\browseDept.aspx" />
     <Content Include="pages\browseEmp.aspx" />
+    <Content Include="pages\editPwd.aspx" />
     <Content Include="pages\edit_dele_dept.aspx" />
     <Content Include="pages\edit_dele_emp.aspx" />
     <Content Include="pages\index.aspx" />
@@ -1125,6 +1126,13 @@
     </Compile>
     <Compile Include="pages\browseEmp.aspx.designer.cs">
       <DependentUpon>browseEmp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\editPwd.aspx.cs">
+      <DependentUpon>editPwd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\editPwd.aspx.designer.cs">
+      <DependentUpon>editPwd.aspx</DependentUpon>
     </Compile>
     <Compile Include="pages\edit_dele_dept.aspx.cs">
       <DependentUpon>edit_dele_dept.aspx</DependentUpon>

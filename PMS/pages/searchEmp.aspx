@@ -75,7 +75,6 @@
                       </table>
                     </EmptyDataTemplate>
                  </asp:GridView> 
-                                <asp:Button runat="server" ID="updatePsw" OnClick="updatePsw_Click"/>
 
             </section>
             <!-- 正文区域 /-->

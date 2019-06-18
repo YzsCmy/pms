@@ -72,9 +72,5 @@ namespace PMS.pages
             }
         }
 
-        protected void updatePsw_Click(object sender, EventArgs e)
-        {
-            employeeDao.UpdatePassword("曾繁星", "b");
-        }
     }
 }
