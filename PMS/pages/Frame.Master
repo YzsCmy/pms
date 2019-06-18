@@ -127,7 +127,7 @@
 
 
 
-                    <li class="treeview">
+                    <li class="treeview" id="add">
                         <a href="#">
                     <i class="fa fa-plus"></i> <span>信息录入</span>
                     <span class="pull-right-container">
@@ -370,6 +370,7 @@
             });
 
             if (getQueryString("status") == 1) {
+                document.getElementById("add").style.display = "none";
                 document.getElementById("dele").style.display = "none";
                 document.getElementById("edit").style.display = "none";
             }
