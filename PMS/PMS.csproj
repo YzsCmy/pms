@@ -1092,8 +1092,6 @@
     <Content Include="plugins\treeTable\jquery.treetable.js" />
     <Content Include="plugins\treeTable\jquery.treetable.theme.default.css" />
     <Content Include="Web.config" />
-    <Content Include="WebForm2.aspx" />
-    <Content Include="WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="dao\DepartmentDAO.cs" />
@@ -1197,20 +1195,6 @@
     <Compile Include="util\MyConnection.cs" />
     <Compile Include="util\OperateDBTemplate.cs" />
     <Compile Include="util\Util.cs" />
-    <Compile Include="WebForm2.aspx.cs">
-      <DependentUpon>WebForm2.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebForm2.aspx.designer.cs">
-      <DependentUpon>WebForm2.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="pages\Frame.Master" />
