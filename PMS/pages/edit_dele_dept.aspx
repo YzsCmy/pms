@@ -31,7 +31,7 @@
                     	部门信息管理
                 </h1>
                 <ol class="breadcrumb">
-                    <li><a href="all-admin-index.html"><i class="fa fa-dashboard"></i> 首页</a></li>
+                    <li><a href="index.aspx"><i class="fa fa-dashboard"></i> 首页</a></li>
                     <li class="active">部门信息管理</li>
                 </ol>
             </section>

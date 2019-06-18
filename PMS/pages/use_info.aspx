@@ -11,7 +11,7 @@
             	</div>
 			
                 <ol class="breadcrumb bg-green myfont" style="margin-right: 10px;padding-top: 20px;">
-	                    <li><a href="all-admin-index.html"><i class="fa fa-dashboard"></i><font color="white">首页</font></a></li>
+	                    <li><a href="index.aspx"><i class="fa fa-dashboard"></i><font color="white">首页</font></a></li>
 	                    <li class="active"><font color="white">使用说明</font></li>
 	                    
 	                </ol>
