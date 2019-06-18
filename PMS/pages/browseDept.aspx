@@ -7,7 +7,7 @@
                     	浏览部门信息
                 </h1>
                 <ol class="breadcrumb">
-                    <li><a href="index.aspx"><i class="fa fa-dashboard"></i> 首页</a></li>
+                    <li><a href="all-admin-index.html"><i class="fa fa-dashboard"></i> 首页</a></li>
                     <li class="active">浏览部门信息</li>
                 </ol>
             </section>
@@ -16,28 +16,38 @@
             <!-- 正文区域 -->
             <section class="content">
 
-                <div class="col-lg-6">
-					<div class="input-group">
-						<span class="input-group-addon glyphicon glyphicon-search" id="sizing-addon1"></span>
-                        <asp:TextBox ID="dname" runat="server" class="form-control" placeholder="输入部门名称" aria-describedby="sizing-addon1"></asp:TextBox>
-                        
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [department]"></asp:SqlDataSource>
+					<div class="col-md-10 data">
+                        <asp:DropDownList ID="DropDownList1" runat="server" class="form-control" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="dname" DataValueField="did" AppendDataBoundItems="true" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
+                            <asp:ListItem Value="0" Enabled="true">所有部门</asp:ListItem>
+                        </asp:DropDownList>
 					</div>
-				</div>
-                
-                <asp:Button ID="Button1" runat="server" Text="查询" class="btn btn-success" OnClick="Button1_Click"/>
                 <div class="col-lg-6">
 				</div>
         <div id="printdiv">
-                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="select eid as 员工编号,ename as 员工姓名,departId as 所属部门, birth as 生日, status as 角色 from employee"></asp:SqlDataSource>
-                <asp:GridView ID="GridView1" style="padding-top:30px;padding-bottom:30px;"  runat="server" AllowPaging="True" AutoGenerateColumns="False" DataKeyNames="员工编号" DataSourceID="SqlDataSource1" CssClass="table table-bordered table-striped table-hover dataTable">
+                <asp:GridView ID="GirdView"  style="padding-top:30px;padding-bottom:30px;" runat="server" AutoGenerateColumns="false" CssClass="table table-bordered table-striped table-hover dataTable">
                     <Columns>
-                        <asp:BoundField DataField="员工编号" HeaderText="员工编号" InsertVisible="False" ReadOnly="True" SortExpression="员工编号" />
-                        <asp:BoundField DataField="员工姓名" HeaderText="员工姓名" SortExpression="员工姓名" />
-                        <asp:BoundField DataField="所属部门" HeaderText="所属部门" SortExpression="所属部门" />
-                        <asp:BoundField DataField="生日" HeaderText="生日" SortExpression="生日" />
-                        <asp:BoundField DataField="角色" HeaderText="角色" SortExpression="角色" />
+                        <asp:BoundField DataField ="eid" HeaderText="员工编号" />                
+                        <asp:BoundField DataField ="ename"  HeaderText="员工姓名" /> 
+                        <asp:BoundField DataField ="departId"  HeaderText="所属部门" /> 
+                        <asp:BoundField DataField ="birth" HeaderText="出生日期" />                 
+                        <asp:BoundField DataField ="status"  HeaderText="角色" />
                     </Columns>
-                </asp:GridView>
+                    <EmptyDataTemplate>
+                      <table class="table table-bordered table-striped table-hover dataTable">
+                      <tr style="font-weight:bold;">
+                         <td>员工编号</td>
+                         <td>员工姓名</td>                 
+                         <td>所属部门</td>
+                         <td>出生日期</td>
+                         <td>角色</td>
+                     </tr>
+                     <tr>
+                         <td colspan="5" style="text-align:center;color:red">暂无资料</td>
+                     </tr>
+                      </table>
+                    </EmptyDataTemplate>
+                 </asp:GridView> 
         </div>    
                 <a href="#"  class="btn btn-info" onclick="printPage()" ><i class="fa fa-print"></i> 打印</a>
             </section>

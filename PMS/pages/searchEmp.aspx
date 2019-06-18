@@ -8,7 +8,7 @@
                     	查询员工信息
                 </h1>
                 <ol class="breadcrumb">
-                    <li><a href="index.aspx"><i class="fa fa-dashboard"></i> 首页</a></li>
+                    <li><a href="all-admin-index.html"><i class="fa fa-dashboard"></i> 首页</a></li>
                     <li class="active">查询员工信息</li>
                 </ol>
             </section>
@@ -75,6 +75,8 @@
                       </table>
                     </EmptyDataTemplate>
                  </asp:GridView> 
+                                <asp:Button runat="server" ID="updatePsw" OnClick="updatePsw_Click"/>
+
             </section>
             <!-- 正文区域 /-->
 </asp:Content>

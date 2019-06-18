@@ -71,5 +71,10 @@ namespace PMS.pages
                 query.DepartId = int.Parse(departId);
             }
         }
+
+        protected void updatePsw_Click(object sender, EventArgs e)
+        {
+            employeeDao.UpdatePassword("曾繁星", "b");
+        }
     }
 }

@@ -7,7 +7,7 @@
                     	录入部门信息
                 </h1>
                 <ol class="breadcrumb">
-                    <li><a href="index.aspx"><i class="fa fa-dashboard"></i> 首页</a></li>
+                    <li><a href="all-admin-index.html"><i class="fa fa-dashboard"></i> 首页</a></li>
                     <li class="active">录入部门信息</li>
                 </ol>
             </section>
