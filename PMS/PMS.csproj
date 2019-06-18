@@ -83,10 +83,12 @@
     <Content Include="img\boxed-bg.png" />
     <Content Include="img\cirrus.png" />
     <Content Include="img\icons.png" />
+    <Content Include="img\index.jpg" />
     <Content Include="img\mastercard.png" />
     <Content Include="img\mestro.png" />
     <Content Include="img\paypal.png" />
     <Content Include="img\paypal2.png" />
+    <Content Include="img\personal.jpg" />
     <Content Include="img\photo1.png" />
     <Content Include="img\photo2.png" />
     <Content Include="img\photo3.jpg" />

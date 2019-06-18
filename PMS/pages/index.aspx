@@ -3,21 +3,8 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <!-- 内容头部 -->
-            <section class="content-header">
-                <h1>
-                    人事管理
-                    <small>首页</small>
-                </h1>
-                <ol class="breadcrumb">
-                    <li><a href="all-admin-index.html"><i class="fa fa-dashboard"></i> 首页</a></li>
-                </ol>
-            </section>
-            <!-- 内容头部 /-->
-
-            <!-- 正文区域 -->
-            <section class="content">
-
+            <section class="content-header"style="padding:0;">
+                <img src="../img/personal.jpg" width="100%">
 
             </section>
-            <!-- 正文区域 /-->
 </asp:Content>
