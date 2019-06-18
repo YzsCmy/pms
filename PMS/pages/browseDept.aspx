@@ -27,6 +27,7 @@
                 <asp:Button ID="Button1" runat="server" Text="查询" class="btn btn-success" OnClick="Button1_Click"/>
                 <div class="col-lg-6">
 				</div>
+        <div id="printdiv">
                 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="select eid as 员工编号,ename as 员工姓名,departId as 所属部门, birth as 生日, status as 角色 from employee"></asp:SqlDataSource>
                 <asp:GridView ID="GridView1" style="padding-top:30px;padding-bottom:30px;"  runat="server" AllowPaging="True" AutoGenerateColumns="False" DataKeyNames="员工编号" DataSourceID="SqlDataSource1" CssClass="table table-bordered table-striped table-hover dataTable">
                     <Columns>
@@ -37,7 +38,19 @@
                         <asp:BoundField DataField="角色" HeaderText="角色" SortExpression="角色" />
                     </Columns>
                 </asp:GridView>
-                <a href="#"  class="btn btn-info"><i class="fa fa-print"></i> 打印</a>
+        </div>    
+                <a href="#"  class="btn btn-info" onclick="printPage()" ><i class="fa fa-print"></i> 打印</a>
             </section>
+     <script type="text/javascript">
+        function printPage(name) 
+        {
+            var newWin = window.open('printer','','');
+            var titleHTML = document.getElementById("printdiv").innerHTML;
+            newWin.document.write(titleHTML);
+            newWin.document.location.reload();
+            newWin.print();
+            newWin.close();
+         }
+    </script>
 </asp:Content>
 

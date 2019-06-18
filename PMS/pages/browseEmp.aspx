@@ -47,7 +47,7 @@
                         <asp:Parameter Name="eid" Type="Int32" />
                     </UpdateParameters>
                 </asp:SqlDataSource>
-            
+         <div id="printdiv">
                 <asp:GridView ID="GridView1" style="padding-top:30px;padding-bottom:30px;"  runat="server" AllowPaging="True" DataSourceID="SqlDataSource1" AutoGenerateColumns="False" DataKeyNames="员工编号" CssClass="table table-bordered table-striped table-hover dataTable">
                     <Columns>
                         <asp:BoundField DataField="员工编号" HeaderText="员工编号" InsertVisible="False" ReadOnly="True" SortExpression="员工编号" />
@@ -57,7 +57,19 @@
                         <asp:BoundField DataField="角色" HeaderText="角色" SortExpression="角色" />
                     </Columns>
                 </asp:GridView>
-            
-                <a href="#"  class="btn btn-info"><i class="fa fa-print"></i> 打印</a>
+        </div>    
+                <a href="#"  class="btn btn-info" onclick="printPage()" ><i class="fa fa-print"></i> 打印</a>
             </section>
+     <script type="text/javascript">
+        function printPage(name) 
+        {
+            var newWin = window.open('printer','','');
+            var titleHTML = document.getElementById("printdiv").innerHTML;
+            newWin.document.write(titleHTML);
+            newWin.document.location.reload();
+            newWin.print();
+            newWin.close();
+         }
+    </script>
+
 </asp:Content>
