@@ -23,10 +23,10 @@
                         <asp:TextBox ID="dname" runat="server"  class="form-control" placeholder="部门名称"></asp:TextBox>
 					</div>
 				
-				
+				     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [eid], [ename] FROM [employee]"></asp:SqlDataSource>
 					<div class="col-md-2 title">部门主管</div>
 					<div class="col-md-10 data">
-                        <asp:TextBox ID="director" runat="server" class="form-control" placeholder="部门主管" ></asp:TextBox>
+                         <asp:DropDownList ID="DropDownList1" runat="server" class="form-control" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="ename" DataValueField="eid"></asp:DropDownList>
 					</div>
 				
 					<div class="col-md-2 title"></div>
@@ -35,6 +35,14 @@
 					</div>
 				
 				</div>
-
             </section>
+        <script type="text/javascript">
+        function input() {
+            if (document.getElementById("ContentPlaceHolder1_dname").value == "") {
+                alert("部门名称不可为空!");
+                return false;
+            }
+            return true;
+        }
+    </script>
 </asp:Content>

@@ -40,15 +40,13 @@ namespace LMIS.query
             {
                 AddQuery("departId = @departId", "@departId", departId);
             }
-            //通过最早登记日期模糊查询
             if (minBirth != new DateTime(0001, 01, 01, 0, 00, 00))
             {
-                AddQuery("birth >= @minBirth", "@minBirth", minBirth);
+                AddQuery("birth <= @minBirth", "@minBirth", minBirth);
             }
-            //通过最晚登记日期模糊查询
             if (maxBirth.Date != new DateTime(0001, 01, 01, 0, 00, 00))
             {
-                AddQuery("birth <= @maxBirth", "@maxBirth", maxBirth);
+                AddQuery("birth >= @maxBirth", "@maxBirth", maxBirth);
             }
         }
 

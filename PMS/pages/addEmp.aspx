@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/pages/Frame.Master" AutoEventWireup="true" CodeBehind="addEmp.aspx.cs" Inherits="PMS.pages.addEmp" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -12,7 +13,6 @@
                 </ol>
             </section>
             <!-- 内容头部 /-->
-
             <!-- 正文区域 -->
             <section class="content">
 
@@ -29,9 +29,9 @@
                         <asp:TextBox ID="pwd" runat="server" TextMode="Password" class="form-control" placeholder="登入密码"></asp:TextBox>
 					</div>
 					
-					<div class="col-md-2 title">年龄</div>
+					<div class="col-md-2 title">出生日期</div>
 					<div class="col-md-10 data">
-                        <asp:TextBox ID="age" runat="server"  class="form-control" placeholder="年龄" TextMode="Number"></asp:TextBox>
+                        <asp:TextBox ID="birth" runat="server"  class="form-control" placeholder="出生日期" TextMode="DateTime" onclick="WdatePicker({dateFmt:'yyyy-MM-dd',maxDate:'%y-%M-{%d}'})"></asp:TextBox>
 					</div>
 				
                     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [department]"></asp:SqlDataSource>
@@ -50,6 +50,22 @@
 					</div>
 				
 				</div>
-
             </section>
+    <script type="text/javascript">
+        function input() {
+            if (document.getElementById("ContentPlaceHolder1_ename").value == "") {
+                alert("姓名不可为空!");
+                return false;
+            }
+            if (document.getElementById("ContentPlaceHolder1_pwd").value == "") {
+                alert("登陆密码不可为空!");
+                return false;
+            }
+            if (document.getElementById("ContentPlaceHolder1_birth").value == "") {
+                alert("出生日期不可为空!");
+                return false;
+            }
+            return true;
+        }
+    </script>
 </asp:Content>

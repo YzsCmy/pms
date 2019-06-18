@@ -5,10 +5,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <script src="My97DatePicker/WdatePicker.js" type="text/javascript">
+               alert(123);
+
+        </script>
+
     <title></title>
 </head>
 <body>
     <form id="form1" runat="server">
+                    <div>最早登记日期:</div><asp:TextBox ID="testDate" runat="server" TextMode="DateTime" onclick="WdatePicker({dateFmt:'yyyy-MM-dd'})"></asp:TextBox>
         <asp:Label runat="server" ID="show"></asp:Label><br />
         <asp:Button ID="Button1" runat="server" Text="查询" OnClick="Button1_Click"/>
         <asp:Button ID="Button2" runat="server" Text="增加" OnClick="Button2_Click" />

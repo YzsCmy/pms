@@ -16,38 +16,58 @@
 
             <!-- 正文区域 -->
             <section class="content">
+                	<div class="row data-type">
 
-				<div class="col-lg-6">
-					<div class="input-group">
-						<span class="input-group-addon glyphicon glyphicon-search" id="sizing-addon1"></span>
-                        <asp:TextBox ID="ename" runat="server" class="form-control" placeholder="输入员工名称" aria-describedby="sizing-addon1"></asp:TextBox>
-                        
+                    <div class="col-md-2 title">员工编号</div>
+					<div class="col-md-10 data">
+                        <asp:TextBox ID="eidText" runat="server" class="form-control" placeholder="员工编号"></asp:TextBox>
 					</div>
-				</div>
-                <div class="col-lg-2">
-					<div class="input-group">
-                        <asp:TextBox ID="age" runat="server" class="form-control" placeholder="输入员工年龄" aria-describedby="sizing-addon1"></asp:TextBox>
+					<div class="col-md-2 title">员工姓名</div>
+					<div class="col-md-10 data">
+                        <asp:TextBox ID="eNameText" runat="server" class="form-control" placeholder="员工姓名"></asp:TextBox>
 					</div>
-					
-				</div>
-                <asp:Button ID="Button1" runat="server" Text="查询" class="btn btn-success" OnClick="Button1_Click"/>
+		
+					<div class="col-md-2 title">最小年龄</div>
+					<div class="col-md-10 data">
+                        <asp:TextBox ID="minAgeText" runat="server"  class="form-control" placeholder="最小年龄" TextMode="Number" min="16"></asp:TextBox>
+					</div>
 
-                <asp:GridView ID="lendRepayMsgView" runat="server" AutoGenerateColumns="false">
+					<div class="col-md-2 title">最大年龄</div>
+					<div class="col-md-10 data">
+                        <asp:TextBox ID="maxAgeText" runat="server"  class="form-control" placeholder="最大年龄" TextMode="Number" min="18"></asp:TextBox>
+					</div>
+
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [department]"></asp:SqlDataSource>
+				    <div class="col-md-2 title">所属部门</div>
+					<div class="col-md-10 data">
+                        <asp:DropDownList ID="DropDownList1" runat="server" class="form-control" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="dname" DataValueField="did" AppendDataBoundItems="true">
+                            <asp:ListItem Value="0" Enabled="true">所有部门</asp:ListItem>
+                        </asp:DropDownList>
+					</div>
+				
+					<div class="col-md-2 title"></div>
+					<div class="col-md-10 data text-center">
+                         <asp:Button ID="Button1" runat="server" Text="查询" class="btn btn-success" OnClick="Button1_Click"/>
+					</div>
+				
+				</div>
+                
+                <asp:GridView ID="lendRepayMsgView"  style="padding-top:30px;padding-bottom:30px;" runat="server" AutoGenerateColumns="false" CssClass="table table-bordered table-striped table-hover dataTable">
                     <Columns>
                         <asp:BoundField DataField ="eid" HeaderText="员工编号" />                
                         <asp:BoundField DataField ="ename"  HeaderText="员工姓名" /> 
                         <asp:BoundField DataField ="departId"  HeaderText="所属部门" /> 
-                        <asp:BoundField DataField ="birth" HeaderText="生日" />                 
-                        <asp:BoundField DataField ="status"  HeaderText="角色" /> 
+                        <asp:BoundField DataField ="birth" HeaderText="出生日期" />                 
+                        <asp:BoundField DataField ="status"  HeaderText="角色" />
                     </Columns>
                     <EmptyDataTemplate>
-                      <table style="border-collapse:collapse;" border="1">
+                      <table class="table table-bordered table-striped table-hover dataTable">
                       <tr style="font-weight:bold;">
-                         <td style="width:67px;">员工编号</td>
-                         <td style="width:67px;">员工姓名</td>                 
-                         <td style="width:67px;">所属部门</td>
-                         <td style="width:67px;">生日</td>
-                         <td style="width:67px;">角色</td>
+                         <td>员工编号</td>
+                         <td>员工姓名</td>                 
+                         <td>所属部门</td>
+                         <td>出生日期</td>
+                         <td>角色</td>
                      </tr>
                      <tr>
                          <td colspan="5" style="text-align:center;color:red">暂无资料</td>
