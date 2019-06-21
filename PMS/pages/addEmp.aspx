@@ -37,12 +37,17 @@
                     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [department]"></asp:SqlDataSource>
 				    <div class="col-md-2 title">所属部门</div>
 					<div class="col-md-4 data">
-                        <asp:DropDownList ID="DropDownList1" runat="server" class="form-control" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="dname" DataValueField="did"></asp:DropDownList>
+                        <asp:DropDownList ID="DropDownList1" runat="server" class="form-control" DataSourceID="SqlDataSource1" DataTextField="dname" DataValueField="did"></asp:DropDownList>
 						
 					</div>
-					<div class="col-md-6 data">
+                    <div class="col-md-6 data">
 						
 					</div>
+                    <div class="col-md-2 title">角色</div>
+					<div class="col-md-10 data">
+                        <asp:TextBox ID="status" runat="server" class="form-control" placeholder="角色"></asp:TextBox>
+					</div>
+					
 				
 					<div class="col-md-2 title"></div>
 					<div class="col-md-4 data text-center">

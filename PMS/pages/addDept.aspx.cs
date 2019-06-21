@@ -23,6 +23,7 @@ namespace PMS.pages
             update.Department.Dname = dname.Text;
             update.Department.Director = int.Parse(DropDownList1.SelectedValue);
             departmentDAO.Insert(update);
+            Response.Redirect("searchDept.aspx");
         }
     }
 }

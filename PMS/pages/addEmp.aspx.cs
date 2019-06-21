@@ -25,8 +25,9 @@ namespace PMS.pages
             insert.Employee.Birth = Util.GetDateTime(birth.Text);
             insert.Employee.DepartId = int.Parse(DropDownList1.SelectedValue);
             insert.Employee.Password = pwd.Text;
-            insert.Employee.Status = 1;
+            insert.Employee.Status =  Convert.ToInt32(status.Text);
             dao.Insert(insert);
+            Response.Redirect("searchEmp.aspx");
         }
     }
 }

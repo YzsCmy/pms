@@ -26,7 +26,7 @@
 				     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [eid], [ename] FROM [employee]"></asp:SqlDataSource>
 					<div class="col-md-2 title">部门主管</div>
 					<div class="col-md-10 data">
-                         <asp:DropDownList ID="DropDownList1" runat="server" class="form-control" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="ename" DataValueField="eid"></asp:DropDownList>
+                         <asp:DropDownList ID="DropDownList1" runat="server" class="form-control" DataSourceID="SqlDataSource1" DataTextField="ename" DataValueField="eid"></asp:DropDownList>
 					</div>
 				
 					<div class="col-md-2 title"></div>
